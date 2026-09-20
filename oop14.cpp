@@ -56,7 +56,8 @@ protected:
     string handleBarStyle;
     string suspensionType;
 public:
-    motorcycle(string _name, string _model, int _noOfTyres, string _handleBarStyle, string _suspensionType): vehicle(_name, _model, _noOfTyres)
+    motorcycle(string _name, string _model, int _noOfTyres, string _handleBarStyle, string _suspensionType): 
+    vehicle(_name, _model, _noOfTyres)
     {
         cout<<"motorcycle ctor called"<<endl;
         this->handleBarStyle= _handleBarStyle;
