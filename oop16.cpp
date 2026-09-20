@@ -41,7 +41,8 @@ public:
 class Techlead : public Employee, public ProjectManager, public Teamlead
 {
 public: 
-    Techlead(const string &empName, int empId, const string &project, int teamSize): Employee(empName, empId), ProjectManager(project), Teamlead(teamSize){ }
+    Techlead(const string &empName, int empId, const string &project, int teamSize): Employee(empName, empId),
+     ProjectManager(project), Teamlead(teamSize){ }
     void displayInfo() const
     {
         display();
