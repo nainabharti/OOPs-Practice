@@ -1,5 +1,7 @@
+//function overloading
 #include<iostream>
 using namespace std;
+/*
 class Add {
 public:
 //x,y,two int addition
@@ -29,5 +31,39 @@ int main()
     cout<<add.sum(x,y)<<endl;
     cout<<add.sum(x,y,z)<<endl;
     cout<<add.sum(5.4, 2.3)<<endl;
+    return 0;
+}
+*/
+//operator overloading
+class Complex
+{
+    public:
+    int real;
+    int imag;
+    Complex(){
+        real = imag = -1;
+    }
+    Complex(int r, int i): real(r), imag(i){ }
+    Complex operator + (const Complex &B)
+    {
+        Complex temp;
+        temp.real = this->real + B.real;
+        temp.imag = this->imag + B.imag;
+        return temp;
+    }
+    void print()
+    {
+        printf("[%d + i%d]\n", this->real, this->imag);
+    }
+};
+int main()
+{
+    Complex  A(2,5);
+    A.print();
+    Complex B(3,3);
+    B.print();
+
+    Complex C = A + B;
+    C.print();
     return 0;
 }
