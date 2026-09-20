@@ -29,10 +29,11 @@ class car: public vehicle
 {
 public:
     int noOfDoors;
-    string transmissionType;
-    car(string _name, string _model, int _noOfTyres, int _noOfDoors, string _transmissionType): vehicle(_name, _model, _noOfTyres)
+    string transmissionType;     
+    car(string _name, string _model, int _noOfTyres, int _noOfDoors, string _transmissionType)
+    : vehicle(_name, _model, _noOfTyres)
     {
-        cout<<"I am inside car ctor"<<endl;
+        cout<<"I am inside car ctor "<<endl;
         this->noOfDoors= _noOfDoors;
         this->transmissionType= _transmissionType;
     }
