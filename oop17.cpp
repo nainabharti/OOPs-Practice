@@ -78,14 +78,14 @@ class shape{
 };
 class circle: public shape{
     public:
-    void draw(){
+    void draw() override{
         cout<<"drawing a circle "<<endl;
     }
 };
 class rectangle : public shape
 {
     public:
-    void draw()
+    void draw () override
     {
         cout<<"drawing a rectangle "<<endl;
     }
@@ -93,7 +93,7 @@ class rectangle : public shape
 class triangle : public shape
 {
     public:
-    void draw(){
+    void draw() override{
         cout<<"drawing a triangle "<<endl;
     }
 };
@@ -102,6 +102,7 @@ void shapedrawing(shape *s)
     s->draw();//draw is polymorphic
 }
 int main(){
+    /*
     circle c;
     rectangle r;
     shapedrawing(&c);
@@ -109,5 +110,21 @@ int main(){
 
     triangle *t =new triangle();
     shapedrawing(t);
+    */
+   shape *s = new shape();
+   s->draw();
+
+   //upcasting
+   shape *s3 = new circle();
+   s3->draw();
+
+   circle *c = new circle();
+   c->draw();
+
+   //downcasting
+
+   shape *s2 = new circle();
+   circle *c2 = (circle*)s2;
+   c2->draw();
     return 0;
 }
