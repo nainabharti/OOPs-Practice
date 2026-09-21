@@ -35,6 +35,7 @@ int main()
 }
 */
 //operator overloading
+/*
 class Complex
 {
     public:
@@ -65,5 +66,48 @@ int main()
 
     Complex C = A + B;
     C.print();
+    return 0;
+}
+*/
+//runtime polymorphism
+class shape{
+    public:
+    virtual void draw(){
+        cout<<"Drawing a generic shape "<<endl;
+    }
+};
+class circle: public shape{
+    public:
+    void draw(){
+        cout<<"drawing a circle "<<endl;
+    }
+};
+class rectangle : public shape
+{
+    public:
+    void draw()
+    {
+        cout<<"drawing a rectangle "<<endl;
+    }
+};
+class triangle : public shape
+{
+    public:
+    void draw(){
+        cout<<"drawing a triangle "<<endl;
+    }
+};
+void shapedrawing(shape *s)
+{
+    s->draw();//draw is polymorphic
+}
+int main(){
+    circle c;
+    rectangle r;
+    shapedrawing(&c);
+    shapedrawing(&r);
+
+    triangle *t =new triangle();
+    shapedrawing(t);
     return 0;
 }
