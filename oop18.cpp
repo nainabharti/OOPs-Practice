@@ -44,6 +44,7 @@ int main(){
 }
 */
 //default argument
+/*
     float value(float p, int n, float r=0.15){
         int i=1;
         int year = 1;
@@ -69,6 +70,25 @@ int main(){
     amount =value(10000.00,5,0.30);
     cout<<"\n Final Value = "<<amount<<"\n\n";
     printline('=');
+    getch();
+    return 0;
+}
+*/
+//factorial
+long fact(int n)
+{
+    if(n==0)
+    return 1;
+    else
+    return (n*fact(n-1));
+}
+int main()
+{
+    int num;
+    cout<<"Enter a positive integer: ";
+    cin>>num;
+
+    cout<<"Factorial of "<<num<<" is "<<fact(num);
     getch();
     return 0;
 }
