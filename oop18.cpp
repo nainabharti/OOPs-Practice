@@ -95,6 +95,7 @@ int main()
 }
 */
 //tower of hanoi
+/*
 void TOH(int d, char tower1, char tower2, char tower3)
 {
     if(d==1)
@@ -123,5 +124,26 @@ int main()
     cout<<"\n\n"<<disk <<" disks in tower 1 are shifted to tower 2";
 
     getch();
+    return 0;
+}
+*/
+//function overloading
+int area(int side)
+{
+    return (side*side);
+}
+int area(int length, int breadth)
+{
+    return (length*breadth);
+}
+float area(double radius)
+{
+    return (3.14*radius*radius);
+}
+int main()
+{
+    cout<<"area of square for side =5 is: "<< area(5)<<endl;
+    cout<<"area of rectangle for length =5, breadth =10 is: "<< area(5,10)<<endl;
+    cout<<"area of circle for side=5.5 is: "<< area(5.5)<<endl;
     return 0;
 }
