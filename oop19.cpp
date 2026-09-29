@@ -30,6 +30,25 @@ public:
         cout<<"Teacher display ";
     }
 };
+//class implementation
+class item{
+private:
+    int number;
+    float cost;
+public:
+    void getdata(int a, float b);  //prototype declaration 
+    //function defined inside class
+    void putdata(void){
+        cout<< "number: "<< number <<"\n";
+        cout<< "cost: "  << cost <<"\n";
+    }
+
+};
+//member function definition
+void item :: getdata(int a, float b){
+    number = a;
+    cost = b;
+}
 
 int main(){
     Student s;
@@ -37,5 +56,10 @@ int main(){
     s.setMarks(90);
     s.result();
     t.display();
+    item x;
+    cout<<"\n object X "<<"\n";
+    x.getdata(100, 299.95);
+    x.putdata();
+    
     return 0;
 }
