@@ -34,6 +34,24 @@ matrix trans (matrix m1){
                 m2.m[i][j] = m1.m[j][i];
     return (m2);
 }
+//dereferencing operators
+class M{
+    int x;
+    int y;
+public:
+    void set_xy(int a , int b){
+        x = a;
+        y = b;
+    }
+    friend int sum(M m);
+};
+int sum(M m){
+    int M ::* px = &M :: x;
+    int M ::* py = &M :: y;
+    M *pm = &m;
+    int S = m.*px + pm ->*py;
+    return S;
+}
 int main(){
     matrix mat1, mat2;
     mat1.read();
@@ -43,6 +61,17 @@ int main(){
     mat2 = trans(mat1);
     cout<<"\nTransposed matrix: ";
     mat2.display();
+
+    cout<<"\n\n";
+    M n;
+    void(M :: *pf)(int ,int) = &M :: set_xy;
+    (n.*pf) (10,20);
+    cout<< "SUM = " << sum(n) <<"\n";
+
+    M *op = &n;
+    (op->*pf) (30,40);
+    cout << "SUM = " <<sum(n) <<"\n";
     getch();
+
     return 0;
 }
