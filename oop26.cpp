@@ -33,6 +33,23 @@ void Fixed_deposit :: display(void){
          << "Principal Amount = "<< P_amount <<"\n"
          << "Return Value = " << R_value <<"\n"; 
 }
+
+//copy constructor
+class code{
+    int id;
+public:
+    code(){ }                       //constructor
+    code(int a) {
+        id = a;
+    }
+    code(code & x){
+        id = x.id;
+    }
+    void display(void){
+        cout << id;
+    }
+};
+
 int main(){
     Fixed_deposit FD1, FD2, FD3;        //deposits created
     long int p;
@@ -60,6 +77,17 @@ int main(){
 
     cout << "\nDeposit 3";
     FD3.display();
+
+    cout<<"\n";
+    code A(100);               //object A is created and initialised
+    code B(A);                 //copy constructor called
+    code C = A;                //copy constructor called again
+    code D;                    //D is created , not initialised
+    D = A;                     //copy constructor not called
+    cout << "\n id of A : ";A.display();
+    cout << "\n id of B : ";B.display();
+    cout << "\n id of C : ";C.display();
+    cout << "\n id of D : ";D.display();
 
     return 0;
 }
