@@ -13,7 +13,7 @@ public:
         count--;
     }
 };
-/*
+
 class instruction{
     int *a;
 public:
@@ -27,7 +27,6 @@ public:
 
     }
 };
-*/
 int main(){
     cout << "Inside the main block..";
     cout << "\n\nCreating first object T1..";
@@ -39,8 +38,8 @@ int main(){
         cout << "\n\nLeaving Block 1..";
     }
     cout <<"\n\nBack inside the main block..";
-/*
-    cout<<"\n";
+    
+
     int s;
     cout << "\n\nEnter the size of the array...";
     cin >> s;
@@ -48,6 +47,5 @@ int main(){
     instruction T(s);
     cout << "\n\nPress any key to end the program..";
     getch();
-    */
     return 0;
 }
