@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+//overloading operators using friends
 const int size = 3;
 class vector{
     int v[size];
