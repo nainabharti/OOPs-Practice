@@ -26,6 +26,13 @@ public:
         return this;
     }
 };
+//overloading function call operator
+class sample{
+public:
+    void operator()(){
+        cout<<"Function call operator called ";
+    }
+};
 int main(){
     int x[5] = {1,2,3,4,5};
     arr A(x);
@@ -42,6 +49,11 @@ int main(){
     cout << "\nPtr->num = "<<ptr->num;
 
     cout << "\nT->num = "<<T->num;
+
+    cout<<"\n";
+
+    sample obj;
+    obj();
     
     getch();
     return 0;
