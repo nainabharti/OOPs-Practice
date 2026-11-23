@@ -33,6 +33,17 @@ public:
         cout<<"Function call operator called ";
     }
 };
+//overloading comma operator
+class number{
+public:
+    int x;
+    number(int a){
+        x=a;
+    }
+    number operator,(number n){
+        return n;
+    }
+};
 int main(){
     int x[5] = {1,2,3,4,5};
     arr A(x);
@@ -54,6 +65,11 @@ int main(){
 
     sample obj;
     obj();
+
+    cout<<"\n";
+    number a(10), b(20);
+    number c =(a,b);
+    cout<<c.x;
     
     getch();
     return 0;
